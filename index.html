@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Site educativo sobre Pirâmide em Matemática — geometria espacial com calculadora interativa e visualização 3D." />
+  <title>Pirâmide — Geometria Espacial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <!-- ============================================================
+       NAVEGAÇÃO FIXA
+  ============================================================ -->
+  <header class="site-header" role="banner">
+    <nav class="nav-container" aria-label="Navegação principal">
+      <a href="#inicio" class="nav-logo" aria-label="Ir para o início">
+        <span class="logo-icon" aria-hidden="true">△</span>
+        <span>Pirâmide</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu" role="list">
+        <li><a href="#o-que-e" class="nav-link">O que é?</a></li>
+        <li><a href="#tipos" class="nav-link">Tipos</a></li>
+        <li><a href="#formulas" class="nav-link">Fórmulas</a></li>
+        <li><a href="#exemplos" class="nav-link">Exemplos</a></li>
+        <li><a href="#exercicios" class="nav-link">Exercícios</a></li>
+        <li><a href="#calculadora" class="nav-link">Calculadora</a></li>
+        <li><a href="#visualizacao" class="nav-link">3D</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ============================================================
+         HERO / INÍCIO
+    ============================================================ -->
+    <section id="inicio" class="hero" aria-label="Apresentação">
+      <div class="hero-content">
+        <div class="hero-badge">Geometria Espacial</div>
+        <h1 class="hero-title">
+          Pirâmide
+          <span class="hero-subtitle">em Matemática</span>
+        </h1>
+        <p class="hero-description">
+          Explore a geometria das pirâmides: aprenda os elementos, as fórmulas de área e volume,
+          resolva exemplos passo a passo e experimente a calculadora interativa com visualização 3D.
+        </p>
+        <div class="hero-actions">
+          <a href="#o-que-e" class="btn btn-primary">Começar a aprender</a>
+          <a href="#visualizacao" class="btn btn-outline">Ver pirâmide 3D</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-pyramid">
+          <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <polygon points="100,20 180,160 20,160" fill="url(#grad1)" stroke="#6c63ff" stroke-width="2"/>
+            <polygon points="100,20 20,160 60,140" fill="url(#grad2)" opacity="0.7"/>
+            <line x1="100" y1="20" x2="100" y2="160" stroke="#6c63ff" stroke-width="1" stroke-dasharray="6,3"/>
+            <defs>
+              <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#a78bfa"/>
+                <stop offset="100%" style="stop-color:#6c63ff"/>
+              </linearGradient>
+              <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#c4b5fd"/>
+                <stop offset="100%" style="stop-color:#8b5cf6"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         O QUE É UMA PIRÂMIDE
+    ============================================================ -->
+    <section id="o-que-e" class="section" aria-labelledby="sec-oq-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Definição</span>
+          <h2 id="sec-oq-title">O que é uma Pirâmide?</h2>
+          <p class="section-intro">
+            Uma <strong>pirâmide</strong> é um sólido geométrico formado por uma base poligonal e
+            faces laterais triangulares que se encontram num único ponto chamado <em>vértice</em> (ápice).
+          </p>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="card card-elevated">
+            <h3 class="card-title">
+              <span class="card-icon" aria-hidden="true">📐</span>
+              Elementos da Pirâmide
+            </h3>
+            <ul class="element-list">
+              <li>
+                <strong>Base (B):</strong> polígono que forma a face inferior da pirâmide.
+                Pode ser triângulo, quadrado, retângulo, hexágono, etc.
+              </li>
+              <li>
+                <strong>Faces Laterais:</strong> triângulos que conectam cada aresta da base ao vértice.
+                O número de faces laterais é igual ao número de lados da base.
+              </li>
+              <li>
+                <strong>Vértice (Ápice) (V):</strong> ponto onde todas as faces laterais se encontram.
+              </li>
+              <li>
+                <strong>Arestas da Base:</strong> lados do polígono base; há tantas arestas de base
+                quanto lados tem a base.
+              </li>
+              <li>
+                <strong>Arestas Laterais:</strong> segmentos que unem o vértice a cada vértice da base.
+              </li>
+              <li>
+                <strong>Altura (h):</strong> distância perpendicular do vértice ao plano da base.
+              </li>
+              <li>
+                <strong>Apótema da Pirâmide (a<sub>p</sub>):</strong> nas pirâmides regulares, é
+                a altura de cada face lateral (medida do vértice até o meio de uma aresta da base).
+              </li>
+              <li>
+                <strong>Apótema da Base (a<sub>b</sub>):</strong> nas pirâmides regulares, é o raio
+                do círculo inscrito na base (distância do centro ao meio de um lado).
+              </li>
+            </ul>
+          </div>
+
+          <div class="card card-elevated">
+            <h3 class="card-title">
+              <span class="card-icon" aria-hidden="true">🔢</span>
+              Relação de Euler
+            </h3>
+            <p>Para qualquer poliedro convexo, incluindo pirâmides:</p>
+            <div class="formula-box formula-highlight">
+              V &minus; A + F = 2
+            </div>
+            <p>Onde:</p>
+            <ul class="element-list">
+              <li><strong>V</strong> = número de vértices</li>
+              <li><strong>A</strong> = número de arestas</li>
+              <li><strong>F</strong> = número de faces</li>
+            </ul>
+            <div class="info-box">
+              <strong>Exemplo — Pirâmide quadrangular:</strong><br>
+              Vértices: 5 &nbsp;|&nbsp; Arestas: 8 &nbsp;|&nbsp; Faces: 5<br>
+              5 &minus; 8 + 5 = <strong>2</strong> ✓
+            </div>
+
+            <h4 style="margin-top:1.5rem">Contagem geral para pirâmide de base <em>n</em>-gonal:</h4>
+            <div class="formula-grid">
+              <div class="formula-item">
+                <span class="formula-label">Vértices</span>
+                <span class="formula-val">n + 1</span>
+              </div>
+              <div class="formula-item">
+                <span class="formula-label">Arestas</span>
+                <span class="formula-val">2n</span>
+              </div>
+              <div class="formula-item">
+                <span class="formula-label">Faces</span>
+                <span class="formula-val">n + 1</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TIPOS DE PIRÂMIDE
+    ============================================================ -->
+    <section id="tipos" class="section section-alt" aria-labelledby="sec-tipos-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Classificação</span>
+          <h2 id="sec-tipos-title">Tipos de Pirâmide</h2>
+          <p class="section-intro">
+            As pirâmides são classificadas pelo tipo de base e pelo alinhamento do vértice.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          <!-- Por base -->
+          <div class="card type-card">
+            <div class="type-icon" aria-hidden="true">
+              <svg viewBox="0 0 80 80" fill="none"><polygon points="40,10 70,65 10,65" fill="#a78bfa" opacity="0.3" stroke="#6c63ff" stroke-width="2"/></svg>
+            </div>
+            <h3>Pirâmide Triangular</h3>
+            <p class="type-also">Tetraedro (quando todas as faces são triângulos equiláteros)</p>
+            <ul>
+              <li>Base: triângulo</li>
+              <li>Faces laterais: 3 triângulos</li>
+              <li>Vértices: 4 &nbsp;|&nbsp; Arestas: 6</li>
+            </ul>
+          </div>
+
+          <div class="card type-card">
+            <div class="type-icon" aria-hidden="true">
+              <svg viewBox="0 0 80 80" fill="none"><polygon points="20,60 60,60 60,30 20,30" fill="#a78bfa" opacity="0.3" stroke="#6c63ff" stroke-width="2"/><line x1="40" y1="8" x2="20" y2="30" stroke="#6c63ff" stroke-width="2"/><line x1="40" y1="8" x2="60" y2="30" stroke="#6c63ff" stroke-width="2"/><line x1="40" y1="8" x2="60" y2="60" stroke="#6c63ff" stroke-width="2"/><line x1="40" y1="8" x2="20" y2="60" stroke="#6c63ff" stroke-width="2"/></svg>
+            </div>
+            <h3>Pirâmide Quadrangular</h3>
+            <p class="type-also">Base quadrada ou retangular</p>
+            <ul>
+              <li>Base: quadrilátero</li>
+              <li>Faces laterais: 4 triângulos</li>
+              <li>Vértices: 5 &nbsp;|&nbsp; Arestas: 8</li>
+            </ul>
+          </div>
+
+          <div class="card type-card">
+            <div class="type-icon" aria-hidden="true">
+              <svg viewBox="0 0 80 80" fill="none"><polygon points="40,60 10,50 18,30 62,30 70,50" fill="#a78bfa" opacity="0.3" stroke="#6c63ff" stroke-width="2"/><line x1="40" y1="8" x2="10" y2="50" stroke="#6c63ff" stroke-width="1.5"/><line x1="40" y1="8" x2="40" y2="60" stroke="#6c63ff" stroke-width="1.5"/><line x1="40" y1="8" x2="70" y2="50" stroke="#6c63ff" stroke-width="1.5"/></svg>
+            </div>
+            <h3>Pirâmide Pentagonal e Hexagonal</h3>
+            <p class="type-also">Base de 5 ou 6 lados</p>
+            <ul>
+              <li>Pentagonal: 6 vértices, 10 arestas</li>
+              <li>Hexagonal: 7 vértices, 12 arestas</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid grid-2" style="margin-top:2rem">
+          <div class="card card-accent">
+            <h3 class="card-title">
+              <span class="card-icon" aria-hidden="true">⭐</span>
+              Pirâmide Regular
+            </h3>
+            <p>
+              Uma pirâmide é <strong>regular</strong> quando:
+            </p>
+            <ol class="styled-list">
+              <li>A base é um polígono regular (todos os lados e ângulos iguais).</li>
+              <li>O vértice está diretamente acima do centro da base (projeção ortogonal).</li>
+            </ol>
+            <p>Nas pirâmides regulares, todas as faces laterais são triângulos isósceles congruentes
+            e existe a apótema da pirâmide (a<sub>p</sub>).</p>
+          </div>
+
+          <div class="card card-accent">
+            <h3 class="card-title">
+              <span class="card-icon" aria-hidden="true">📏</span>
+              Pirâmide Oblíqua
+            </h3>
+            <p>
+              Uma pirâmide é <strong>oblíqua</strong> quando o vértice <em>não</em> se projeta
+              sobre o centro da base. Neste caso:
+            </p>
+            <ul class="element-list">
+              <li>As faces laterais são triângulos de formas diferentes.</li>
+              <li>Não existe uma apótema única da pirâmide.</li>
+              <li>O cálculo da área lateral exige a área de cada face separadamente.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FÓRMULAS
+    ============================================================ -->
+    <section id="formulas" class="section" aria-labelledby="sec-form-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Matemática</span>
+          <h2 id="sec-form-title">Fórmulas Essenciais</h2>
+          <p class="section-intro">
+            As principais fórmulas para calcular áreas e volume de pirâmides.
+          </p>
+        </div>
+
+        <!-- Volume -->
+        <div class="formula-section">
+          <h3 class="formula-section-title">Volume</h3>
+          <div class="grid grid-2">
+            <div class="card formula-card">
+              <div class="formula-card-header">
+                <span class="formula-tag">Geral</span>
+                <h4>Volume de qualquer pirâmide</h4>
+              </div>
+              <div class="formula-box large">
+                V = (A<sub>b</sub> × h) / 3
+              </div>
+              <ul class="element-list">
+                <li><strong>A<sub>b</sub></strong> = área da base (m², cm², etc.)</li>
+                <li><strong>h</strong> = altura da pirâmide</li>
+              </ul>
+              <div class="info-box">
+                O volume de uma pirâmide é sempre <strong>1/3</strong> do volume do prisma
+                de mesma base e mesma altura.
+              </div>
+            </div>
+            <div class="card formula-card">
+              <div class="formula-card-header">
+                <span class="formula-tag">Por tipo de base</span>
+                <h4>Área da Base conforme o polígono</h4>
+              </div>
+              <table class="formula-table" aria-label="Área da base por tipo de polígono">
+                <thead>
+                  <tr><th>Base</th><th>Fórmula de A<sub>b</sub></th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Triângulo equilátero (lado <em>a</em>)</td><td><code>(a² × √3) / 4</code></td></tr>
+                  <tr><td>Triângulo (base <em>b</em>, altura <em>h<sub>b</sub></em>)</td><td><code>(b × h<sub>b</sub>) / 2</code></td></tr>
+                  <tr><td>Quadrado (lado <em>a</em>)</td><td><code>a²</code></td></tr>
+                  <tr><td>Retângulo (lados <em>a</em> e <em>b</em>)</td><td><code>a × b</code></td></tr>
+                  <tr><td>Hexágono regular (lado <em>a</em>)</td><td><code>(3 × a² × √3) / 2</code></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Área Lateral -->
+        <div class="formula-section">
+          <h3 class="formula-section-title">Área Lateral</h3>
+          <div class="grid grid-2">
+            <div class="card formula-card">
+              <div class="formula-card-header">
+                <span class="formula-tag">Pirâmide Regular</span>
+                <h4>Área Lateral — Caso regular</h4>
+              </div>
+              <div class="formula-box large">
+                A<sub>L</sub> = (P<sub>b</sub> × a<sub>p</sub>) / 2
+              </div>
+              <ul class="element-list">
+                <li><strong>P<sub>b</sub></strong> = perímetro da base</li>
+                <li><strong>a<sub>p</sub></strong> = apótema da pirâmide</li>
+              </ul>
+              <div class="info-box">
+                A apótema da pirâmide relaciona-se com a altura e a apótema da base por:
+                <div class="formula-box small">a<sub>p</sub>² = h² + a<sub>b</sub>²</div>
+              </div>
+            </div>
+            <div class="card formula-card">
+              <div class="formula-card-header">
+                <span class="formula-tag">Caso Geral</span>
+                <h4>Área Lateral — Soma das faces</h4>
+              </div>
+              <div class="formula-box large">
+                A<sub>L</sub> = Σ A<sub>face i</sub>
+              </div>
+              <p>Somar a área de cada face lateral triangular:</p>
+              <div class="formula-box">
+                A<sub>face</sub> = (base × altura<sub>triâng.</sub>) / 2
+              </div>
+              <p>Em pirâmides regulares, todas as faces laterais são congruentes, portanto:</p>
+              <div class="formula-box">
+                A<sub>L</sub> = n × A<sub>face</sub>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Área Total -->
+        <div class="formula-section">
+          <h3 class="formula-section-title">Área Total</h3>
+          <div class="card formula-card formula-full">
+            <div class="formula-card-header">
+              <span class="formula-tag">Geral</span>
+              <h4>Área Total da Superfície</h4>
+            </div>
+            <div class="formula-box large">
+              A<sub>T</sub> = A<sub>B</sub> + A<sub>L</sub>
+            </div>
+            <p>A área total é simplesmente a área da base somada à área lateral.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXEMPLOS RESOLVIDOS
+    ============================================================ -->
+    <section id="exemplos" class="section section-alt" aria-labelledby="sec-ex-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Prática</span>
+          <h2 id="sec-ex-title">Exemplos Resolvidos</h2>
+          <p class="section-intro">Veja a resolução passo a passo de problemas clássicos.</p>
+        </div>
+
+        <!-- Exemplo 1 -->
+        <div class="example-card" id="exemplo1">
+          <div class="example-header">
+            <span class="example-num">Exemplo 1</span>
+            <h3>Pirâmide Quadrangular Regular</h3>
+          </div>
+          <div class="example-body">
+            <div class="example-enunciado">
+              <strong>Enunciado:</strong> Uma pirâmide regular de base quadrada tem lado da base
+              <strong>a = 6 cm</strong> e altura <strong>h = 4 cm</strong>. Calcule:
+              (a) a apótema da base, (b) a apótema da pirâmide, (c) a área lateral,
+              (d) a área total e (e) o volume.
+            </div>
+            <div class="steps">
+              <div class="step">
+                <span class="step-num">a</span>
+                <div class="step-content">
+                  <strong>Apótema da base (a<sub>b</sub>)</strong>
+                  <p>Para um quadrado com lado <em>a</em>, a apótema da base é metade do lado:</p>
+                  <div class="formula-box small">a<sub>b</sub> = a / 2 = 6 / 2 = <strong>3 cm</strong></div>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-num">b</span>
+                <div class="step-content">
+                  <strong>Apótema da pirâmide (a<sub>p</sub>)</strong>
+                  <p>Pelo Teorema de Pitágoras no triângulo retângulo formado por h, a<sub>b</sub> e a<sub>p</sub>:</p>
+                  <div class="formula-box small">
+                    a<sub>p</sub>² = h² + a<sub>b</sub>²<br>
+                    a<sub>p</sub>² = 4² + 3² = 16 + 9 = 25<br>
+                    a<sub>p</sub> = √25 = <strong>5 cm</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-num">c</span>
+                <div class="step-content">
+                  <strong>Área lateral (A<sub>L</sub>)</strong>
+                  <p>Perímetro da base: P = 4 × 6 = 24 cm</p>
+                  <div class="formula-box small">
+                    A<sub>L</sub> = (P × a<sub>p</sub>) / 2 = (24 × 5) / 2 = 120 / 2 = <strong>60 cm²</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-num">d</span>
+                <div class="step-content">
+                  <strong>Área total (A<sub>T</sub>)</strong>
+                  <p>Área da base: A<sub>b</sub> = 6² = 36 cm²</p>
+                  <div class="formula-box small">
+                    A<sub>T</sub> = A<sub>b</sub> + A<sub>L</sub> = 36 + 60 = <strong>96 cm²</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-num">e</span>
+                <div class="step-content">
+                  <strong>Volume (V)</strong>
+                  <div class="formula-box small">
+                    V = (A<sub>b</sub> × h) / 3 = (36 × 4) / 3 = 144 / 3 = <strong>48 cm³</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exemplo 2 -->
+        <div class="example-card" id="exemplo2">
+          <div class="example-header">
+            <span class="example-num">Exemplo 2</span>
+            <h3>Pirâmide Triangular Regular (Tetraedro Regular)</h3>
+          </div>
+          <div class="example-body">
+            <div class="example-enunciado">
+              <strong>Enunciado:</strong> Um tetraedro regular (pirâmide de base triangular equilátera
+              com todas as faces equiláteras) tem aresta <strong>a = 6 cm</strong>. Calcule:
+              (a) a área da base, (b) a altura do tetraedro, (c) a área total e (d) o volume.
+            </div>
+            <div class="steps">
+              <div class="step">
+                <span class="step-num">a</span>
+                <div class="step-content">
+                  <strong>Área da base (triângulo equilátero)</strong>
+                  <div class="formula-box small">
+                    A<sub>b</sub> = (a² × √3) / 4 = (36 × 1,732) / 4 ≈ 62,35 / 4 ≈ <strong>15,59 cm²</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-num">b</span>
+                <div class="step-content">
+                  <strong>Altura do tetraedro regular</strong>
+                  <p>Para um tetraedro regular de aresta <em>a</em>:</p>
+                  <div class="formula-box small">
+                    h = a × √(2/3) = 6 × √(2/3) = 6 × 0,8165 ≈ <strong>4,90 cm</strong>
+                  </div>
+                  <p><small>Derivação: A<sub>b</sub> da base, o centróide fica a R = a/√3 do centro.
+                  Então h² = a² − R² = a² − a²/3 = 2a²/3, ∴ h = a√(2/3).</small></p>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-num">c</span>
+                <div class="step-content">
+                  <strong>Área total</strong>
+                  <p>O tetraedro regular tem 4 faces equiláteras congruentes:</p>
+                  <div class="formula-box small">
+                    A<sub>T</sub> = 4 × A<sub>face</sub> = 4 × 15,59 ≈ <strong>62,35 cm²</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-num">d</span>
+                <div class="step-content">
+                  <strong>Volume</strong>
+                  <div class="formula-box small">
+                    V = (A<sub>b</sub> × h) / 3 = (15,59 × 4,90) / 3 ≈ 76,40 / 3 ≈ <strong>25,46 cm³</strong>
+                  </div>
+                  <p><small>Fórmula direta para tetraedro regular: V = a³√2 / 12 = 216 × 1,414 / 12 ≈ 25,46 cm³ ✓</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exemplo 3 -->
+        <div class="example-card" id="exemplo3">
+          <div class="example-header">
+            <span class="example-num">Exemplo 3</span>
+            <h3>Pirâmide Retangular</h3>
+          </div>
+          <div class="example-body">
+            <div class="example-enunciado">
+              <strong>Enunciado:</strong> Uma pirâmide regular tem base retangular com
+              <strong>a = 8 cm</strong> e <strong>b = 6 cm</strong>, e altura <strong>h = 9 cm</strong>.
+              Calcule o volume e a área total.
+            </div>
+            <div class="steps">
+              <div class="step">
+                <span class="step-num">1</span>
+                <div class="step-content">
+                  <strong>Área da base retangular</strong>
+                  <div class="formula-box small">
+                    A<sub>b</sub> = a × b = 8 × 6 = <strong>48 cm²</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-num">2</span>
+                <div class="step-content">
+                  <strong>Volume</strong>
+                  <div class="formula-box small">
+                    V = (A<sub>b</sub> × h) / 3 = (48 × 9) / 3 = 432 / 3 = <strong>144 cm³</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-num">3</span>
+                <div class="step-content">
+                  <strong>Apótemas e área lateral</strong>
+                  <p>Apótema em relação ao lado a (a<sub>b,a</sub> = b/2 = 3 cm):</p>
+                  <div class="formula-box small">
+                    a<sub>p,a</sub> = √(h² + (b/2)²) = √(81 + 9) = √90 ≈ 9,49 cm
+                  </div>
+                  <p>Apótema em relação ao lado b (a<sub>b,b</sub> = a/2 = 4 cm):</p>
+                  <div class="formula-box small">
+                    a<sub>p,b</sub> = √(h² + (a/2)²) = √(81 + 16) = √97 ≈ 9,85 cm
+                  </div>
+                  <p>Área lateral (2 pares de faces):</p>
+                  <div class="formula-box small">
+                    A<sub>L</sub> = 2 × (a × a<sub>p,a</sub>)/2 + 2 × (b × a<sub>p,b</sub>)/2<br>
+                    = a × a<sub>p,a</sub> + b × a<sub>p,b</sub><br>
+                    = 8 × 9,49 + 6 × 9,85 ≈ 75,92 + 59,10 ≈ <strong>135,02 cm²</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-num">4</span>
+                <div class="step-content">
+                  <strong>Área total</strong>
+                  <div class="formula-box small">
+                    A<sub>T</sub> = A<sub>b</sub> + A<sub>L</sub> = 48 + 135,02 ≈ <strong>183,02 cm²</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXERCÍCIOS
+    ============================================================ -->
+    <section id="exercicios" class="section" aria-labelledby="sec-exe-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Pratique</span>
+          <h2 id="sec-exe-title">Exercícios</h2>
+          <p class="section-intro">Tente resolver antes de ver o gabarito!</p>
+        </div>
+
+        <div class="exercises-list">
+
+          <div class="exercise-card">
+            <div class="exercise-header">
+              <span class="exercise-num">1</span>
+              <div class="exercise-question">
+                <p>Uma pirâmide regular de base quadrada tem lado <strong>a = 10 cm</strong>
+                e altura <strong>h = 12 cm</strong>. Calcule o volume e a área total.</p>
+              </div>
+            </div>
+            <button class="btn-gabarito" aria-expanded="false" data-target="gab1">
+              <span class="gab-icon" aria-hidden="true">👁</span> Ver Gabarito
+            </button>
+            <div class="gabarito" id="gab1" hidden>
+              <div class="steps">
+                <div class="step">
+                  <span class="step-num">1</span>
+                  <div class="step-content">
+                    A<sub>b</sub> = 10² = 100 cm²
+                  </div>
+                </div>
+                <div class="step">
+                  <span class="step-num">2</span>
+                  <div class="step-content">
+                    V = (100 × 12) / 3 = <strong>400 cm³</strong>
+                  </div>
+                </div>
+                <div class="step">
+                  <span class="step-num">3</span>
+                  <div class="step-content">
+                    a<sub>b</sub> = 10/2 = 5 cm &nbsp;→&nbsp;
+                    a<sub>p</sub> = √(12² + 5²) = √(144+25) = √169 = 13 cm
+                  </div>
+                </div>
+                <div class="step">
+                  <span class="step-num">4</span>
+                  <div class="step-content">
+                    A<sub>L</sub> = (P × a<sub>p</sub>) / 2 = (40 × 13) / 2 = <strong>260 cm²</strong>
+                  </div>
+                </div>
+                <div class="step">
+                  <span class="step-num">5</span>
+                  <div class="step-content">
+                    A<sub>T</sub> = 100 + 260 = <strong>360 cm²</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="exercise-card">
+            <div class="exercise-header">
+              <span class="exercise-num">2</span>
+              <div class="exercise-question">
+                <p>Uma pirâmide triangular regular tem base equilátera com lado <strong>a = 4 cm</strong>
+                e apótema da pirâmide <strong>a<sub>p</sub> = 5 cm</strong>.
+                Calcule a área lateral e o volume.</p>
+              </div>
+            </div>
+            <button class="btn-gabarito" aria-expanded="false" data-target="gab2">
+              <span class="gab-icon" aria-hidden="true">👁</span> Ver Gabarito
+            </button>
+            <div class="gabarito" id="gab2" hidden>
+              <div class="steps">
+                <div class="step">
+                  <span class="step-num">1</span>
+                  <div class="step-content">
+                    P = 3 × 4 = 12 cm<br>
+                    A<sub>L</sub> = (12 × 5) / 2 = <strong>30 cm²</strong>
+                  </div>
+                </div>
+                <div class="step">
+                  <span class="step-num">2</span>
+                  <div class="step-content">
+                    Apótema da base (triângulo equilátero): a<sub>b</sub> = a / (2√3) × √3 = a√3/6... 
+                    Mais direto: a<sub>b</sub> = a/(2√3) = 4/(2×1,732) ≈ 1,155 cm
+                  </div>
+                </div>
+                <div class="step">
+                  <span class="step-num">3</span>
+                  <div class="step-content">
+                    h = √(a<sub>p</sub>² − a<sub>b</sub>²) = √(25 − 1,333) = √23,667 ≈ 4,865 cm
+                  </div>
+                </div>
+                <div class="step">
+                  <span class="step-num">4</span>
+                  <div class="step-content">
+                    A<sub>b</sub> = (4² × √3) / 4 = 4√3 ≈ 6,928 cm²<br>
+                    V = (6,928 × 4,865) / 3 ≈ 33,71 / 3 ≈ <strong>11,24 cm³</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="exercise-card">
+            <div class="exercise-header">
+              <span class="exercise-num">3</span>
+              <div class="exercise-question">
+                <p>O volume de uma pirâmide regular de base quadrada é <strong>V = 192 cm³</strong>
+                e sua altura é <strong>h = 9 cm</strong>. Determine o lado da base e a apótema da pirâmide.</p>
+              </div>
+            </div>
+            <button class="btn-gabarito" aria-expanded="false" data-target="gab3">
+              <span class="gab-icon" aria-hidden="true">👁</span> Ver Gabarito
+            </button>
+            <div class="gabarito" id="gab3" hidden>
+              <div class="steps">
+                <div class="step">
+                  <span class="step-num">1</span>
+                  <div class="step-content">
+                    V = (A<sub>b</sub> × h) / 3 → A<sub>b</sub> = (3 × V) / h = (3 × 192) / 9 = 576 / 9 = <strong>64 cm²</strong>
+                  </div>
+                </div>
+                <div class="step">
+                  <span class="step-num">2</span>
+                  <div class="step-content">
+                    A<sub>b</sub> = a² → a = √64 = <strong>8 cm</strong>
+                  </div>
+                </div>
+                <div class="step">
+                  <span class="step-num">3</span>
+                  <div class="step-content">
+                    a<sub>b</sub> = a/2 = 4 cm<br>
+                    a<sub>p</sub> = √(h² + a<sub>b</sub>²) = √(81 + 16) = √97 ≈ <strong>9,85 cm</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="exercise-card">
+            <div class="exercise-header">
+              <span class="exercise-num">4</span>
+              <div class="exercise-question">
+                <p>A Grande Pirâmide de Gizé tem base quadrada com lado aproximado de
+                <strong>230 m</strong> e altura original de <strong>147 m</strong>.
+                Estime o volume e a área lateral dessa pirâmide.</p>
+              </div>
+            </div>
+            <button class="btn-gabarito" aria-expanded="false" data-target="gab4">
+              <span class="gab-icon" aria-hidden="true">👁</span> Ver Gabarito
+            </button>
+            <div class="gabarito" id="gab4" hidden>
+              <div class="steps">
+                <div class="step">
+                  <span class="step-num">1</span>
+                  <div class="step-content">
+                    A<sub>b</sub> = 230² = <strong>52.900 m²</strong>
+                  </div>
+                </div>
+                <div class="step">
+                  <span class="step-num">2</span>
+                  <div class="step-content">
+                    V = (52.900 × 147) / 3 = 7.776.300 / 3 ≈ <strong>2.592.100 m³</strong>
+                  </div>
+                </div>
+                <div class="step">
+                  <span class="step-num">3</span>
+                  <div class="step-content">
+                    a<sub>b</sub> = 230/2 = 115 m<br>
+                    a<sub>p</sub> = √(147² + 115²) = √(21.609 + 13.225) = √34.834 ≈ 186,6 m
+                  </div>
+                </div>
+                <div class="step">
+                  <span class="step-num">4</span>
+                  <div class="step-content">
+                    A<sub>L</sub> = (4 × 230 × 186,6) / 2 = (920 × 186,6) / 2 ≈ 171.672 / 2 ≈ <strong>85.836 m²</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CALCULADORA INTERATIVA
+    ============================================================ -->
+    <section id="calculadora" class="section section-alt" aria-labelledby="sec-calc-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Ferramenta</span>
+          <h2 id="sec-calc-title">Calculadora de Pirâmide</h2>
+          <p class="section-intro">
+            Informe o tipo de base e as medidas para calcular volume, áreas e apótemas automaticamente.
+          </p>
+        </div>
+
+        <div class="calculator-wrapper">
+          <div class="calc-panel">
+            <form id="calcForm" novalidate aria-label="Calculadora de pirâmide">
+
+              <!-- Tipo de base -->
+              <div class="form-group">
+                <label for="baseType" class="form-label">Tipo de Base</label>
+                <select id="baseType" name="baseType" class="form-control" aria-describedby="baseTypeHelp">
+                  <option value="square">Quadrada (lado único)</option>
+                  <option value="rectangle">Retangular (dois lados)</option>
+                  <option value="equilateral">Triangular equilátera</option>
+                </select>
+                <span id="baseTypeHelp" class="form-help">Selecione a forma da base da pirâmide</span>
+              </div>
+
+              <!-- Inputs dinâmicos -->
+              <div id="inputFields">
+                <!-- Injetado via JS -->
+              </div>
+
+              <!-- Altura -->
+              <div class="form-group">
+                <label for="altura" class="form-label">Altura (h)</label>
+                <div class="input-unit-wrap">
+                  <input type="number" id="altura" name="altura" class="form-control"
+                         placeholder="ex: 5" min="0.01" step="any"
+                         aria-describedby="alturaHelp alturaError" />
+                  <span class="input-unit">cm</span>
+                </div>
+                <span id="alturaHelp" class="form-help">Distância perpendicular do vértice à base</span>
+                <span id="alturaError" class="form-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-full">
+                Calcular
+              </button>
+              <button type="button" id="clearCalc" class="btn btn-outline btn-full" style="margin-top:0.5rem">
+                Limpar
+              </button>
+            </form>
+          </div>
+
+          <div class="calc-results" id="calcResults" aria-live="polite" aria-label="Resultados do cálculo">
+            <div class="results-placeholder">
+              <span aria-hidden="true">△</span>
+              <p>Preencha os dados e clique em <strong>Calcular</strong> para ver os resultados aqui.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         VISUALIZAÇÃO 3D
+    ============================================================ -->
+    <section id="visualizacao" class="section" aria-labelledby="sec-3d-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Interativo</span>
+          <h2 id="sec-3d-title">Pirâmide 3D Interativa</h2>
+          <p class="section-intro">
+            Arraste para orbitar, role para zoom e use os controles para alterar as dimensões.
+          </p>
+        </div>
+
+        <div class="scene-wrapper">
+          <div class="scene-canvas-wrap">
+            <canvas id="pyramidCanvas" aria-label="Visualização 3D de uma pirâmide"></canvas>
+            <div class="scene-overlay-info" id="sceneInfo" aria-live="polite">
+              <div class="info-line">
+                <span>Base:</span> <strong id="infoBase">—</strong>
+              </div>
+              <div class="info-line">
+                <span>Altura:</span> <strong id="infoAltura">—</strong>
+              </div>
+              <div class="info-line">
+                <span>Volume:</span> <strong id="infoVolume">—</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="scene-controls" aria-label="Controles da pirâmide 3D">
+            <h3 class="controls-title">Controles</h3>
+
+            <div class="control-group">
+              <label for="slider3dBase" class="control-label">
+                Lado da Base: <span id="val3dBase">4</span> unid.
+              </label>
+              <input type="range" id="slider3dBase" class="slider"
+                     min="1" max="10" step="0.1" value="4"
+                     aria-label="Ajustar lado da base da pirâmide 3D"
+                     aria-valuemin="1" aria-valuemax="10" aria-valuenow="4" />
+            </div>
+
+            <div class="control-group">
+              <label for="slider3dHeight" class="control-label">
+                Altura: <span id="val3dHeight">5</span> unid.
+              </label>
+              <input type="range" id="slider3dHeight" class="slider"
+                     min="0.5" max="12" step="0.1" value="5"
+                     aria-label="Ajustar altura da pirâmide 3D"
+                     aria-valuemin="0.5" aria-valuemax="12" aria-valuenow="5" />
+            </div>
+
+            <div class="control-group">
+              <label class="control-label">Aparência</label>
+              <div class="toggle-group">
+                <label class="toggle-label">
+                  <input type="checkbox" id="toggleWireframe" class="toggle-check" />
+                  <span class="toggle-text">Wireframe</span>
+                </label>
+                <label class="toggle-label">
+                  <input type="checkbox" id="toggleAxes" class="toggle-check" checked />
+                  <span class="toggle-text">Eixos</span>
+                </label>
+                <label class="toggle-label">
+                  <input type="checkbox" id="toggleShadow" class="toggle-check" checked />
+                  <span class="toggle-text">Sombra</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label">Rotação automática</label>
+              <div class="toggle-group">
+                <label class="toggle-label">
+                  <input type="checkbox" id="toggleAutoRotate" class="toggle-check" checked />
+                  <span class="toggle-text">Ativar</span>
+                </label>
+              </div>
+            </div>
+
+            <button id="btnResetCamera" class="btn btn-outline" style="width:100%;margin-top:1rem">
+              Resetar Câmera
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       RODAPÉ
+  ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>
+        <span aria-hidden="true">△</span>
+        <strong>Pirâmide — Geometria Espacial</strong>
+        &nbsp;·&nbsp; Conteúdo educativo em português
+      </p>
+      <p class="footer-credits">
+        Construído com HTML, CSS e JavaScript puro &nbsp;·&nbsp;
+        Visualização 3D via <a href="https://threejs.org" target="_blank" rel="noopener noreferrer">Three.js</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Three.js via CDN. Usando defer garante carregamento em ordem após o DOM. -->
+  <script defer src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <script defer src="assets/js/three-scene.js"></script>
+  <script defer src="assets/js/main.js"></script>
+</body>
+</html>
