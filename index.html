@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pirâmides Geométricas - Turma 302</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+
+<body>
+
+    <!-- ============================================================
+         HEADER / NAVBAR
+    ============================================================ -->
+    <header class="navbar" id="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <h1 class="brand-text">Geometria 3D</h1>
+                <p class="brand-subtitle">Pirâmides Matemáticas</p>
+            </div>
+
+            <nav class="navbar-menu" id="navMenu">
+                <a href="#hero" class="nav-link active">Início</a>
+                <a href="#info" class="nav-link">Informações</a>
+                <a href="#pyramid3d" class="nav-link">Pirâmide 3D</a>
+                <a href="#gallery" class="nav-link">Galeria</a>
+                <a href="#team" class="nav-link">Grupo</a>
+                <a href="#contact" class="nav-link">Contato</a>
+            </nav>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div class="navbar-subtitle-bar">
+            <span class="work-label">Trabalho Professor Bruno Souto</span>
+            <span class="group-label">Grupo 2 - Turma 302</span>
+        </div>
+    </header>
+
+    <!-- ============================================================
+         HERO SECTION
+    ============================================================ -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h2 class="hero-title" data-aos="fade-up">
+                Explorando Pirâmides
+            </h2>
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+                Geometria, Matemática e Visualização 3D Interativa
+            </p>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+                <button class="btn btn-primary"
+                    onclick="document.getElementById('pyramid3d').scrollIntoView({behavior: 'smooth'})">
+                    Ver Pirâmide 3D
+                </button>
+                <button class="btn btn-secondary"
+                    onclick="document.getElementById('info').scrollIntoView({behavior: 'smooth'})">
+                    Saiba Mais
+                </button>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ============================================================
+         INFORMAÇÕES MATEMÁTICAS
+    ============================================================ -->
+    <section class="info-section" id="info">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Pirâmides: Conceitos Matemáticos</h2>
+            <p>Aprenda sobre geometria tridimensional</p>
+        </div>
+
+        <div class="info-grid">
+            <!-- Card 1: Definição -->
+            <div class="info-card" data-aos="fade-up">
+                <div class="card-icon">01</div>
+                <h3>Definição</h3>
+                <p>
+                    Uma pirâmide é um poliedro formado por uma base poligonal e faces triangulares que convergem para um
+                    vértice comum (ápice).
+                </p>
+            </div>
+
+            <!-- Card 2: Fórmula Volume -->
+            <div class="info-card" data-aos="fade-up" data-aos-delay="150">
+                <div class="card-icon">02</div>
+                <h3>Volume</h3>
+                <div class="formula">V = <sub>1</sub>/<sub>3</sub> × A<sub>base</sub> × h</div>
+                <p>O volume é um terço do produto da área da base pela altura.</p>
+            </div>
+
+            <!-- Card 3: Área Total -->
+            <div class="info-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-icon">03</div>
+                <h3>Área Total</h3>
+                <div class="formula">A<sub>total</sub> = A<sub>base</sub> + A<sub>lateral</sub></div>
+                <p>A soma da área da base com todas as faces laterais.</p>
+            </div>
+
+            <!-- Card 4: Tipos -->
+            <div class="info-card" data-aos="fade-up" data-aos-delay="450">
+                <div class="card-icon">04</div>
+                <h3>Tipos de Pirâmides</h3>
+                <ul>
+                    <li><strong>Triangular:</strong> Base triângulo</li>
+                    <li><strong>Quadrangular:</strong> Base quadrado</li>
+                    <li><strong>Pentagonal:</strong> Base pentágono</li>
+                </ul>
+            </div>
+
+            <!-- Card 5: Características -->
+            <div class="info-card" data-aos="fade-up" data-aos-delay="600">
+                <div class="card-icon">05</div>
+                <h3>Características</h3>
+                <ul>
+                    <li>Vertices: n+1 (base + ápice)</li>
+                    <li>Arestas: 2n</li>
+                    <li>Faces: n+1</li>
+                </ul>
+            </div>
+
+            <!-- Card 6: Aplicações -->
+            <div class="info-card" data-aos="fade-up" data-aos-delay="750">
+                <div class="card-icon">06</div>
+                <h3>Aplicações Reais</h3>
+                <p>
+                    Encontradas em arquitetura (Egito), estruturas de cristal, embalagens, design e muitas obras
+                    arquitetônicas modernas.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         DEFINICOES E CURIOSIDADES
+    ============================================================ -->
+    <section class="deep-info" id="definicoes-curiosidades">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Piramides</h2>
+            <p>Conceitos centrais e curiosidades geometricas organizadas de forma clara.</p>
+        </div>
+
+        <div class="deep-info-wrap">
+            <article class="deep-info-card deep-info-definition" data-aos="fade-up">
+                <span class="deep-info-kicker">Definicao</span>
+                <h3>O que e uma piramide?</h3>
+                <p>
+                    Uma piramide e um solido geometrico tridimensional (poliedro) formado por uma base poligonal
+                    (quadrado, triangulo etc.) e faces laterais triangulares que se encontram em um ponto unico,
+                    chamado vertice ou apice.
+                </p>
+            </article>
+
+            <div class="deep-info-facts" data-aos="fade-up" data-aos-delay="120">
+                <article class="fact-card">
+                    <h4>Faces laterais</h4>
+                    <p>Diferente dos prismas, todas as faces laterais de uma piramide sao triangulos e se unem no vertice.</p>
+                </article>
+                <article class="fact-card">
+                    <h4>Vertice unico</h4>
+                    <p>As arestas laterais se encontram em um unico ponto no topo, conhecido como apice.</p>
+                </article>
+                <article class="fact-card">
+                    <h4>Classificacao pela base</h4>
+                    <p>O nome da piramide e definido pelo poligono da base: triangular, quadrangular, pentagonal etc.</p>
+                </article>
+                <article class="fact-card">
+                    <h4>Arestas congruentes</h4>
+                    <p>Em uma piramide regular, todas as arestas laterais possuem a mesma medida.</p>
+                </article>
+                <article class="fact-card">
+                    <h4>Apotema</h4>
+                    <p>E a altura de cada triangulo lateral, da regiao do vertice ate o ponto medio de um lado da base.</p>
+                </article>
+                <article class="fact-card">
+                    <h4>Tronco de piramide</h4>
+                    <p>Com corte paralelo a base, obtem-se uma piramide menor e um tronco com faces laterais em trapezios isosceles.</p>
+                </article>
+                <article class="fact-card">
+                    <h4>Relacao com prisma</h4>
+                    <p>O volume e um terco do prisma equivalente: <span class="formula-inline">V = (A<sub>b</sub> x h) / 3</span>.</p>
+                </article>
+                <article class="fact-card">
+                    <h4>Tetraedro</h4>
+                    <p>A piramide de base triangular tem o menor numero de faces possivel: 4 faces no total.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SEÇÃO LOGO + PIRÂMIDE 3D
+    ============================================================ -->
+    <section class="pyramid-main" id="pyramid3d">
+        <div class="pyramid-header" data-aos="fade-up">
+            <h2>Visualização Interativa 3D</h2>
+            <p>Clique e arraste para girar. Role para ampliar. Ajuste os sliders para modificar a pirâmide em tempo
+                real.</p>
+        </div>
+
+        <div class="pyramid-container">
+            <!-- Logo da Turma -->
+            <div class="logo-section" data-aos="zoom-in">
+                <div class="logo-box">
+                    <img src="./assets/images/302logo.png" alt="Logo Turma 302" class="turma-logo" />
+                </div>
+            </div>
+
+            <!-- Canvas 3D -->
+            <div class="canvas-wrapper" data-aos="fade-up">
+                <canvas id="pyramidCanvas" class="pyramid-canvas" aria-label="Pirâmide 3D interativa"></canvas>
+                <div class="canvas-info">
+                    <div class="info-tooltip">Arraste para rotacionar</div>
+                    <div class="info-tooltip">Role para zoom</div>
+                </div>
+            </div>
+
+            <!-- Controles -->
+            <div class="pyramid-controls" data-aos="fade-up">
+                <div class="control-group">
+                    <label for="baseSlider">Base: <span id="baseValue">4</span>m</label>
+                    <input type="range" id="baseSlider" min="2" max="10" value="4" step="0.5" class="slider" />
+                </div>
+                <div class="control-group">
+                    <label for="heightSlider">Altura: <span id="heightValue">6</span>m</label>
+                    <input type="range" id="heightSlider" min="2" max="15" value="6" step="0.5" class="slider" />
+                </div>
+                <button class="btn btn-small" id="resetView">↺ Resetar Visão</button>
+                <button class="btn btn-small" id="toggleWireframe">Wireframe</button>
+            </div>
+        </div>
+
+        <!-- Cálculos em Tempo Real -->
+        <div class="calculations" data-aos="fade-up">
+            <h3>Cálculos em Tempo Real</h3>
+            <div class="calc-grid">
+                <div class="calc-item">
+                    <span class="calc-label">Volume:</span>
+                    <span class="calc-value" id="volumeValue">32 m³</span>
+                </div>
+                <div class="calc-item">
+                    <span class="calc-label">Área Base:</span>
+                    <span class="calc-value" id="baseAreaValue">16 m²</span>
+                </div>
+                <div class="calc-item">
+                    <span class="calc-label">Altura Lateral:</span>
+                    <span class="calc-value" id="slantHeightValue">6.32 m</span>
+                </div>
+                <div class="calc-item">
+                    <span class="calc-label">Área Lateral:</span>
+                    <span class="calc-value" id="lateralAreaValue">50.56 m²</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         GALERIA DE CONCEITOS
+    ============================================================ -->
+    <section class="gallery" id="gallery">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Galeria de Conceitos</h2>
+            <p>Diferentes tipos e perspectivas de pirâmides</p>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item" data-aos="fade-up" data-pyramid="triangular" role="button" tabindex="0" aria-label="Abrir informações da Pirâmide Triangular">
+                <div class="gallery-img">
+                    <div class="pyramid-simple pyramid-tri"
+                        style="background: linear-gradient(135deg, #0ea5e9, #06b6d4);">
+                        <span>Triangular</span>
+                    </div>
+                </div>
+                <h4>Pirâmide Triangular</h4>
+                <p>Base triangular com 4 faces</p>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="150" data-pyramid="quadrangular" role="button" tabindex="0" aria-label="Abrir informações da Pirâmide Quadrangular">
+                <div class="gallery-img">
+                    <div class="pyramid-simple pyramid-quad"
+                        style="background: linear-gradient(135deg, #0284c7, #0369a1);">
+                        <span>Quadrangular</span>
+                    </div>
+                </div>
+                <h4>Pirâmide Quadrangular</h4>
+                <p>Base quadrada com 5 faces</p>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="300" data-pyramid="pentagonal" role="button" tabindex="0" aria-label="Abrir informações da Pirâmide Pentagonal">
+                <div class="gallery-img">
+                    <div class="pyramid-simple pyramid-penta"
+                        style="background: linear-gradient(135deg, #0369a1, #075985);">
+                        <span>Pentagonal</span>
+                    </div>
+                </div>
+                <h4>Pirâmide Pentagonal</h4>
+                <p>Base pentagonal com 6 faces</p>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="450" data-pyramid="hexagonal" role="button" tabindex="0" aria-label="Abrir informações da Pirâmide Hexagonal">
+                <div class="gallery-img">
+                    <div class="pyramid-simple pyramid-hex"
+                        style="background: linear-gradient(135deg, #075985, #0c4a6e);">
+                        <span>Hexagonal</span>
+                    </div>
+                </div>
+                <h4>Pirâmide Hexagonal</h4>
+                <p>Base hexagonal com 7 faces</p>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="600" data-pyramid="egipcia" role="button" tabindex="0" aria-label="Abrir informações da Pirâmide Egípcia">
+                <div class="gallery-img">
+                    <div class="pyramid-simple pyramid-egypt"
+                        style="background: linear-gradient(135deg, #e0f2fe, #0ea5e9);">
+                        <span>Egípcia</span>
+                    </div>
+                </div>
+                <h4>Pirâmide Egípcia</h4>
+                <p>Proporções clássicas (Quéops)</p>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="750" data-pyramid="regular" role="button" tabindex="0" aria-label="Abrir informações da Pirâmide Regular">
+                <div class="gallery-img">
+                    <div class="pyramid-simple pyramid-regular"
+                        style="background: linear-gradient(135deg, #bfdbfe, #0284c7);">
+                        <span>Regular</span>
+                    </div>
+                </div>
+                <h4>Pirâmide Regular</h4>
+                <p>Base regular e apótema igual</p>
+            </div>
+        </div>
+
+        <div class="gallery-detail-backdrop" id="galleryDetailBackdrop" hidden></div>
+        <article class="gallery-detail" id="galleryDetail" aria-live="polite" role="dialog" aria-modal="true" aria-labelledby="galleryDetailTitle" hidden>
+            <div class="gallery-detail-head">
+                <h3 id="galleryDetailTitle">Detalhes da Pirâmide</h3>
+                <button class="gallery-detail-close" id="galleryDetailClose" type="button" aria-label="Fechar informações">Fechar</button>
+            </div>
+            <p class="gallery-detail-subtitle" id="galleryDetailSubtitle"></p>
+            <ul class="gallery-detail-list" id="galleryDetailList"></ul>
+        </article>
+    </section>
+
+    <!-- ============================================================
+         SEÇÃO DO GRUPO / PARTICIPANTES
+    ============================================================ -->
+    <section class="team" id="team">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Equipe do Projeto - Grupo 2 Turma 302</h2>
+            <p>Trabalho acadêmico desenvolvido por 1 líder e 3 membros.</p>
+        </div>
+
+        <div class="team-grid">
+            <div class="team-member" data-aos="fade-up">
+                <button class="member-avatar-btn" type="button" data-whatsapp-name="Isaac" data-whatsapp-phone="51980636909" aria-label="Enviar mensagem para Isaac no WhatsApp">
+                    <img class="member-avatar" src="./assets/images/Isaac.png" alt="Foto de Isaac" />
+                </button>
+                <h4>Isaac</h4>
+                <p class="member-role">Líder</p>
+            </div>
+
+            <div class="team-member" data-aos="fade-up" data-aos-delay="150">
+                <button class="member-avatar-btn" type="button" data-whatsapp-name="Andrey" data-whatsapp-phone="5194066582" aria-label="Enviar mensagem para Andrey no WhatsApp">
+                    <img class="member-avatar" src="./assets/images/andrey.png" alt="Foto de Andrey" />
+                </button>
+                <h4>Andrey</h4>
+                <p class="member-role">Membro</p>
+            </div>
+
+            <div class="team-member" data-aos="fade-up" data-aos-delay="300">
+                <button class="member-avatar-btn" type="button" data-whatsapp-name="Jorge" data-whatsapp-phone="51997881983" aria-label="Enviar mensagem para Jorge no WhatsApp">
+                    <img class="member-avatar" src="./assets/images/jorge.png" alt="Foto de Jorge" />
+                </button>
+                <h4>Jorge</h4>
+                <p class="member-role">Membro</p>
+            </div>
+
+            <div class="team-member" data-aos="fade-up" data-aos-delay="450">
+                <button class="member-avatar-btn" type="button" data-whatsapp-name="Luan" data-whatsapp-phone="5197593636" aria-label="Enviar mensagem para Luan no WhatsApp">
+                    <img class="member-avatar" src="./assets/images/Luan.png" alt="Foto de Luan" />
+                </button>
+                <h4>Luan</h4>
+                <p class="member-role">Membro</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="wa-confirm-backdrop" id="waConfirmBackdrop" hidden></div>
+    <aside class="wa-confirm-modal" id="waConfirmModal" role="dialog" aria-modal="true" aria-labelledby="waConfirmTitle" hidden>
+        <h3 id="waConfirmTitle">Confirmação</h3>
+        <p id="waConfirmText">Deseja mesmo enviar mensagem para essa pessoa?</p>
+        <div class="wa-confirm-actions">
+            <button type="button" class="wa-btn wa-btn-secondary" id="waCancelBtn">Cancelar</button>
+            <button type="button" class="wa-btn wa-btn-primary" id="waConfirmBtn">Enviar Mensagem</button>
+        </div>
+    </aside>
+
+    <!-- ============================================================
+         FOOTER / CONTATO
+    ============================================================ -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Sobre Este Projeto</h4>
+                <p>
+                    Trabalho acadêmico desenvolvido para explorar conceitos de geometria tridimensional
+                    através de visualização interativa e educação no domínio visual.
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Tecnologias Utilizadas</h4>
+                <ul>
+                    <li>HTML5 & CSS3</li>
+                    <li>JavaScript Vanilla</li>
+                    <li>Three.js (WebGL)</li>
+                    <li>AOS (Animate on Scroll)</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Informações</h4>
+                <p><strong>Professor:</strong> Bruno Souto</p>
+                <p><strong>Turma:</strong> 302</p>
+                <p><strong>Ano:</strong> 2026</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Grupo 2 - Turma 302. Todos os direitos reservados.</p>
+            <p>Projeto acadêmico de Geometria 3D.</p>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+         SCRIPTS
+    ============================================================ -->
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js" defer></script>
+
+    <!-- AOS (Animate On Scroll) -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+
+    <!-- Scripts Locais -->
+    <script src="./assets/js/three-scene.js" defer></script>
+    <script src="./assets/js/main.js" defer></script>
+</body>
+
+</html>
